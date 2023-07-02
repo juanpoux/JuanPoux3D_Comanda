@@ -1,0 +1,1383 @@
+{
+	"info": {
+		"_postman_id": "de509133-db47-4e61-ba86-bbc7e6f4fade",
+		"name": "TP_Prog3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19932334"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "crear usuarios",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "Francisco",
+									"type": "text"
+								},
+								{
+									"key": "usuario",
+									"value": "pancho",
+									"type": "text"
+								},
+								{
+									"key": "clave",
+									"value": "pancho",
+									"type": "text"
+								},
+								{
+									"key": "rol",
+									"value": "cocinero",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:666/usuarios",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtener todos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2ODcyOTg2NjgsImV4cCI6MTY4NzM1ODY2OCwiYXVkIjoiMjdjZTFiYTFlZjBmMjI4ZWRkZjg2ODJjNDg3YWI3YjczOGY0NDdhYSIsImRhdGEiOnsidGlwbyI6IkNvY2luZXJvIiwiaWQiOjd9LCJhcHAiOiJUZXN0IEpXVCJ9.UCtwPPHjabJvsqaVJcRMcga9DlYj1G3eAPzjpEMLfCo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:666/usuarios",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtener uno",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:666/usuarios",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "usuario",
+									"value": "juanchopo",
+									"type": "text"
+								},
+								{
+									"key": "clave",
+									"value": "juanchopo",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "Corona",
+									"type": "text"
+								},
+								{
+									"key": "tipo",
+									"value": "bebida",
+									"type": "text"
+								},
+								{
+									"key": "precio",
+									"value": "1100",
+									"type": "text"
+								},
+								{
+									"key": "rol",
+									"value": "bebida",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:666/productos",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtener todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:666/productos",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtener uno",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:666/productos/2",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"productos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mesas",
+			"item": [
+				{
+					"name": "crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "4as55",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:666/mesas",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"mesas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtener todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:666/mesas",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"mesas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtener uno",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:666/mesas/1",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"mesas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modif",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "estado",
+									"value": "asd",
+									"type": "text"
+								},
+								{
+									"key": "codigo",
+									"value": "aa3dw",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:666/mesas/1",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"mesas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedidos",
+			"item": [
+				{
+					"name": "crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "qwe22",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:666/pedidos",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cargar pedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "idProducto",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "cantidad",
+									"value": "4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:666/pedidos/cargarPedido/5rew5",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"pedidos",
+								"cargarPedido",
+								"5rew5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtener todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:666/pedidos",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtener uno",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:666/pedidos/5rew5",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"pedidos",
+								"5rew5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modif",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:666/mesas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"mesas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "JWT",
+			"item": [
+				{
+					"name": "validar token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2ODcyOTgxNzgsImV4cCI6MTY4NzM1ODE3OCwiYXVkIjoiMjdjZTFiYTFlZjBmMjI4ZWRkZjg2ODJjNDg3YWI3YjczOGY0NDdhYSIsImRhdGEiOnsidGlwbyI6IkNvY2luZXJvIiwiaWQiOjd9LCJhcHAiOiJUZXN0IEpXVCJ9.-_V6wNww8KMsO8Hg1JaAx3ZINu-ECkyhhWP_tgN4Gzc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:666/jwt/verificarToken",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"jwt",
+								"verificarToken"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "devolver datos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:666/jwt/devolverDatos",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"jwt",
+								"devolverDatos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Funcionalidades",
+			"item": [
+				{
+					"name": "1- Una moza toma el pedido de una:",
+					"item": [
+						{
+							"name": "login moza",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "usuario",
+											"value": "juanchopo",
+											"type": "text"
+										},
+										{
+											"key": "clave",
+											"value": "juanchopo",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "la moza crea el pedido",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "codigo",
+											"value": "44eee",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:666/pedidos",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"pedidos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "carga milanesa a caballo",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "idProducto",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "cantidad",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:666/pedidos/cargarPedido/44eee",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"pedidos",
+										"cargarPedido",
+										"44eee"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "carga dos hamburguesas de garbanzo",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "idProducto",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "cantidad",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:666/pedidos/cargarPedido/44eee",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"pedidos",
+										"cargarPedido",
+										"44eee"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "carga una corona",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "idProducto",
+											"value": "6",
+											"type": "text"
+										},
+										{
+											"key": "cantidad",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:666/pedidos/cargarPedido/44eee",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"pedidos",
+										"cargarPedido",
+										"44eee"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "carga un daikiri",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "idProducto",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "cantidad",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:666/pedidos/cargarPedido/44eee",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"pedidos",
+										"cargarPedido",
+										"44eee"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "2- El mozo saca una foto de la mesa y lo relaciona con el pedido.",
+					"item": [
+						{
+							"name": "Sacar foto pedido",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "imagen",
+											"type": "file",
+											"src": "/C:/Users/Juan/Desktop/RAO/casa1.jpg"
+										},
+										{
+											"key": "codigoPedido",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:666/pedidos/subirFoto/44eee",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"pedidos",
+										"subirFoto",
+										"44eee"
+									],
+									"query": [
+										{
+											"key": "codigoPedido",
+											"value": "",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Crear Pedido"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "3- Cada empleado responsable de cada producto del pedido , debe:",
+					"item": [
+						{
+							"name": "login bartender",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "usuario",
+											"value": "camila",
+											"type": "text"
+										},
+										{
+											"key": "clave",
+											"value": "camila",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login cocinero",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "usuario",
+											"value": "pancho",
+											"type": "text"
+										},
+										{
+											"key": "clave",
+											"value": "pancho",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Productos Pendientes del usuario logueado",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:666/pedidos/traerProductosPedidos/pendiente",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"pedidos",
+										"traerProductosPedidos",
+										"pendiente"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cambiar estado pedido Copy",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "estado",
+											"value": "en preparacion",
+											"type": "text"
+										},
+										{
+											"key": "idProducto",
+											"value": "6",
+											"type": "text"
+										},
+										{
+											"key": "codigoPedido",
+											"value": "44eee",
+											"type": "text"
+										},
+										{
+											"key": "tiempoPrep",
+											"value": "10",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:666/pedidos/cambiarEstadoProducto",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"pedidos",
+										"cambiarEstadoProducto"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "4- El cliente ingresa el código de la mesa junto con el número de pedido y ve el tiempo de demora de su pedido.",
+					"item": [
+						{
+							"name": "tiempo de espera",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:666/clientes/mostrarDemora/44eee/4",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"clientes",
+										"mostrarDemora",
+										"44eee",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "5- Alguno de los socios pide el listado de pedidos y el tiempo de demora de ese pedido.",
+					"item": [
+						{
+							"name": "pedidos con demora.",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:666/pedidos/pedidosConDemora",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"pedidos",
+										"pedidosConDemora"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login socio",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "usuario",
+											"value": "carlitox",
+											"type": "text"
+										},
+										{
+											"key": "clave",
+											"value": "carlitox",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "6- Cada empleado responsable de cada producto del pedido, debe:",
+					"item": [
+						{
+							"name": "login bartender",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "usuario",
+											"value": "camila",
+											"type": "text"
+										},
+										{
+											"key": "clave",
+											"value": "camila",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Productos Pendientes del usuario logueado",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:666/pedidos/traerProductosPedidos/pendiente",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"pedidos",
+										"traerProductosPedidos",
+										"pendiente"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cambiar estado pedido",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "estado",
+											"value": "listo para servir",
+											"type": "text"
+										},
+										{
+											"key": "idProducto",
+											"value": "6",
+											"type": "text"
+										},
+										{
+											"key": "codigoPedido",
+											"value": "44eee",
+											"type": "text"
+										},
+										{
+											"key": "tiempoPrep",
+											"value": "0",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:666/pedidos/cambiarEstadoProducto",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"pedidos",
+										"cambiarEstadoProducto"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "7- La moza se fija los pedidos que están listos para servir , cambia el estado de la mesa,",
+					"item": [
+						{
+							"name": "login moza",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "usuario",
+											"value": "juanchopo",
+											"type": "text"
+										},
+										{
+											"key": "clave",
+											"value": "juanchopo",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Mostrar Pedidos Terminados",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "localhost:666/pedidos/traerPedidosListos",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"pedidos",
+										"traerPedidosListos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Servir Pedido",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "codigoPedido",
+											"value": "44eee",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/pedidos/servirPedido",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"pedidos",
+										"servirPedido"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "❏ 8- Alguno de los socios pide el listado de las mesas y sus estados .",
+					"item": [
+						{
+							"name": "login socio",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "usuario",
+											"value": "carlitox",
+											"type": "text"
+										},
+										{
+											"key": "clave",
+											"value": "carlitox",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "listar mesas",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "localhost:666/mesas/listarMesas",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"mesas",
+										"listarMesas"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Manejo CSV",
+			"item": [
+				{
+					"name": "descargar pedidos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:666/pedidos/descargarCSV",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"pedidos",
+								"descargarCSV"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "descargar productos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:666/productos/descargarCSV",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"productos",
+								"descargarCSV"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "descargar usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:666/usuarios/descargarCSV",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"usuarios",
+								"descargarCSV"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "carga forzada usuarios",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "csv",
+									"type": "file",
+									"src": "/C:/Users/Juan/Desktop/utn 2023/prog/TP PROG 3/slim-php-mysql-heroku-jwt/app/CSVDescargados/usuarios.csv"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:666/cargaForzadaCSV/usuarios",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"cargaForzadaCSV",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "carga forzada pedidos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "csv",
+									"type": "file",
+									"src": "/C:/Users/Juan/Desktop/utn 2023/prog/TP PROG 3/slim-php-mysql-heroku-jwt/app/CSVDescargados/pedidos.csv"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:666/cargaForzadaCSV/pedidos",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"cargaForzadaCSV",
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

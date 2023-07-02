@@ -1,0 +1,7 @@
+id,nombre,precio,tipo,rol
+1,Pizza,2000,comida,cocinero
+2,Daikiri,1500,bebida,bartender
+3,IPA,1000,bebida,cervecero
+4,Milanesa a caballo,2900,comida,cocinero
+5,Hamburguesa de garbanzo,2100,comida,cocinero
+6,Corona,1100,bebida,bebida
