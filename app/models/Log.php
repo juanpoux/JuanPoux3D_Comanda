@@ -14,7 +14,7 @@ class Log
         $this->id_usuario = $id_usuario;
         $this->accion = $accion;
         $this->status = $status;
-        $this->fecha_accion = date('Y-m-d H:i:s'); // Obtiene la fecha actual en el formato deseado
+        $this->fecha_accion = date('Y-m-d H:i:s');
         $this->info = $info;
     }
 

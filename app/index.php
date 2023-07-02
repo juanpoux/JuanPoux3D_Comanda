@@ -22,6 +22,7 @@ require_once './controllers/MesaController.php';
 require_once './controllers/PedidoController.php';
 require_once './controllers/CSVController.php';
 require_once './controllers/PDFController.php';
+require_once './controllers/EncuestaController.php';
 
 
 date_default_timezone_set('America/Argentina/Buenos_Aires');
@@ -74,6 +75,7 @@ $app->group('/productos', function (RouteCollectorProxy $group) {
 // Mesas
 $app->group('/mesas', function (RouteCollectorProxy $group) {
   $group->get('/listarMesas', \MesaController::class . ':TraerTodos')->add(new MWVerificar("socio"));
+  $group->get('/masUsada', \MesaController::class . ':TraerMasUsada')->add(new MWVerificar("socio"));
 
   $group->get('[/]', \MesaController::class . ':TraerTodos')->add(new MWVerificar("todos"));
   $group->get('/{mesa}', \MesaController::class . ':TraerUno')->add(new MWVerificar("mozo"));
@@ -101,8 +103,15 @@ $app->group('/pedidos', function (RouteCollectorProxy $group) {
   $group->put('/servirPedido', \PedidoController::class . ':ServirUnPedido')->add(new MWVerificar("mozo"));
 })->add(new MWLogOperaciones());
 
+// clientes
 $app->group('/clientes', function (RouteCollectorProxy $group) {
   $group->get('/mostrarDemora/{codigoPedido}/{idProducto}', \PedidoController::class . ':TraerDemora')->add(new MWVerificar("todos"));
+  $group->post('/darOpinion', \EncuestaController::class . ':CargarUno')->add(new MWVerificar("todos"));
+})->add(new MWLogOperaciones());
+
+// calificaciones
+$app->group('/calificaciones', function (RouteCollectorProxy $group) {
+  $group->get('/mejores', \EncuestaController::class . ':TraerMejores')->add(new MWVerificar("socio"));
 })->add(new MWLogOperaciones());
 
 // carga de csv

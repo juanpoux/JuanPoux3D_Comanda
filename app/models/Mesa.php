@@ -66,4 +66,22 @@ class Mesa
         $consulta->bindValue(':fechaBaja', date_format($fecha, 'Y-m-d H:i:s'));
         $consulta->execute();
     }
+
+    public static function obtenerCodigoMesaMasUsado()
+    {
+        $objAccesoDatos = AccesoDatos::obtenerInstancia();
+        $consulta = $objAccesoDatos->prepararConsulta("SELECT codigoMesa, COUNT(*) AS veces_repetido
+                                                  FROM pedidos
+                                                  GROUP BY codigoMesa
+                                                  ORDER BY veces_repetido DESC
+                                                  LIMIT 1");
+        $consulta->execute();
+
+        $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
+        if ($resultado) {
+            return $resultado['codigoMesa'];
+        } else {
+            return false;
+        }
+    }
 }

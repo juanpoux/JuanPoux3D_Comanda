@@ -26,7 +26,6 @@ class MesaController extends Mesa implements IApiUsable
 
   public function TraerUno($request, $response, $args)
   {
-    // Buscamos producto por id
     $id = $args['mesa'];
     $mesa = Mesa::obtenerMesa($id);
     $payload = json_encode($mesa);
@@ -77,5 +76,20 @@ class MesaController extends Mesa implements IApiUsable
     $response->getBody()->write($payload);
     return $response
       ->withHeader('Content-Type', 'application/json');
+  }
+
+  public function TraerMasUsada($request, $response, $args)
+  {
+    $codigoMesa = Mesa::obtenerCodigoMesaMasUsado();
+    $mesa = "No se han usado mesas al momento";
+
+    if ($codigoMesa) {
+      $mesa = Mesa::obtenerMesaPorCodigo($codigoMesa);
+    }
+
+    $payload = json_encode($mesa);
+
+    $response->getBody()->write($payload);
+    return $response->withHeader('Content-Type', 'application/json');
   }
 }
