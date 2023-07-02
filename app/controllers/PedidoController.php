@@ -1,6 +1,8 @@
 <?php
 require_once './models/Pedido.php';
+require_once './models/Producto.php';
 require_once './models/Usuario.php';
+require_once './models/Mesa.php';
 require_once './models/Archivos.php';
 require_once './interfaces/IApiUsable.php';
 
@@ -13,19 +15,23 @@ class PedidoController extends Pedido implements IApiUsable
     $cookies = $request->getCookieParams();
     $idUsuario = Usuario::getLoggedUsrID($cookies);
 
-    $codigoMesa = $parametros['codigo'];
+    $codigoMesa = $parametros['codigoMesa'];
+    $mesa = Mesa::obtenerMesaPorCodigo($codigoMesa);
+    $payload = json_encode(array("mensaje" => "No hay mesas con el código solicitado."));
 
-    // Creamos pedido
-    $pedido = new Pedido();
-    $pedido->idUsuario = $idUsuario;
-    $pedido->codigo = Pedido::generarCodigoAlfanumerico();
-    $pedido->codigoMesa = $codigoMesa;
-    $pedido->estado = "En preparacion";
-    $pedido->inicio = date('Y-m-d H:i:s');
+    if ($mesa) {
+      $pedido = new Pedido();
+      $pedido->idUsuario = $idUsuario;
+      $pedido->codigo = Pedido::generarCodigoAlfanumerico();
+      $pedido->codigoMesa = $codigoMesa;
+      $pedido->estado = "En preparacion";
+      $pedido->inicio = date('Y-m-d H:i:s');
 
-    $pedido->crearPedido();
+      $pedido->crearPedido();
 
-    $payload = json_encode(array("mensaje" => "Pedido creado con exito. "));
+      $payload = json_encode(array("mensaje" => "Pedido con el codigo $pedido->codigo creado con exito. "));
+    }
+
 
     $response->getBody()->write($payload);
     return $response
@@ -39,10 +45,19 @@ class PedidoController extends Pedido implements IApiUsable
     $idProducto = $parametros['idProducto'];
     $cantidad = $parametros['cantidad'];
     $codigoPedido = $args['codigoPedido'];
+    $payload = json_encode(array("mensaje" => "el producto ya se encuentra cargado al pedido"));
 
-    Pedido::cargarPedido($codigoPedido, $idProducto, $cantidad);
+    $pedido = Pedido::obtenerPedidoPorCodigo($codigoPedido);
+    $prod = Producto::obtenerProducto($idProducto);
+    $pedProd = Pedido::obtenerPedidoProductoPorCodigoYProdId($codigoPedido, $idProducto);
+    if (!$pedProd) {
+      $payload = json_encode(array("mensaje" => "No hay pedidos con el código o no existe el producto"));
 
-    $payload = json_encode(array("mensaje" => "Pedido cargado con exito. "));
+      if ($pedido && $prod) {
+        Pedido::cargarPedido($codigoPedido, $idProducto, $cantidad);
+        $payload = json_encode(array("mensaje" => "Pedido cargado con exito. "));
+      }
+    }
 
     $response->getBody()->write($payload);
     return $response
@@ -157,15 +172,32 @@ class PedidoController extends Pedido implements IApiUsable
     $tiempoPrep = $parametros["tiempoPrep"];
     $pedido = Pedido::obtenerPedidoProductoPorCodigoYProdId($codigoPedido, $idProducto);
 
-    $payload = json_encode(array("OK" => "No se realizó el cambio porque el pedido ya se encuentra en el estado $estado"));
+    $prod = Producto::obtenerProducto($idProducto);
+    $cookies = $request->getCookieParams();
+    $idUsuario = Usuario::getLoggedUsrID($cookies);
+    $usr = Usuario::obtenerUsuarioPorId($idUsuario);
 
-    if ($pedido["estado"] != $estado) {
-      if ($tiempoPrep > 0) {
-        Pedido::actualizarEstadoYFinalPedidoProducto($codigoPedido, $idProducto, $estado, $tiempoPrep);
-      } else {
-        Pedido::actualizarEstadoPedidoProducto($codigoPedido, $idProducto, $estado);
+    $payload = json_encode(array("OK" => "El rol del usuario ($usr->rol) no coincide con el del producto ($prod->rol)"));
+    if ($prod->rol == $usr->rol) {
+
+      $payload = json_encode(array("OK" => "No se encuentra el pedido solicitado"));
+      if ($pedido && $prod) {
+        $payload = json_encode(array("OK" => "No se realizó el cambio porque el pedido ya se encuentra en el estado $estado"));
+
+        if ($pedido["estado"] != $estado) {
+          if ($tiempoPrep > 0) {
+            Pedido::actualizarEstadoYFinalPedidoProducto($codigoPedido, $idProducto, $estado, $tiempoPrep);
+          } else {
+            echo 1;
+            Pedido::actualizarEstadoPedidoProducto($codigoPedido, $idProducto, $estado);
+            $ped = Pedido::obtenerPedidoProductoPorCodigoYEstado($codigoPedido, "en preparacion");
+            if (!$ped) {
+              Pedido::actualizarEstadoPedido($codigoPedido, "listo para servir");
+            }
+          }
+          $payload = json_encode(array("OK" => "Estado actualizado"));
+        }
       }
-      $payload = json_encode(array("OK" => "Estado actualizado"));
     }
 
     $response->getBody()->write($payload);
@@ -175,19 +207,16 @@ class PedidoController extends Pedido implements IApiUsable
 
   public function TraerDemora($request, $response, $args)
   {
-    $idProducto = $args['idProducto'];
+    $codigoMesa = $args['codigoMesa'];
     $codigoPedido = $args['codigoPedido'];
 
-    $producto = Producto::obtenerProducto($idProducto);
-    $payload = json_encode("Producto inexistente");
-
-    if ($producto != false) {
-      $nombreProducto = $producto->nombre;
-      $pedido = Pedido::obtenerPedidoProductoConFechasPorCodigo($codigoPedido, $idProducto);
-      $demora = Pedido::obtenerDemoraPedidoProducto($pedido);
-      $payload = json_encode(array("demora de $nombreProducto" => "$demora minutos"));
+    $payload = json_encode(array("mensaje" => "No se encuentra pedido con el código solicitado"));
+    $mesa = Mesa::obtenerMesaPorCodigo($codigoMesa);
+    $pedido = Pedido::obtenerPedidoPorCodigo($codigoPedido);
+    if ($pedido && $mesa) {
+      $pedidos = Pedido::obtenerPedidosConDemoraPorCodigoPedido($codigoPedido);
+      $payload = json_encode(array("listaPedidos" => $pedidos));
     }
-
 
     $response->getBody()->write($payload);
     return $response
@@ -248,7 +277,7 @@ class PedidoController extends Pedido implements IApiUsable
 
     $mesa = Mesa::obtenerMesaPorCodigo($codigoMesa);
     $estado = "cerrada";
-    if ($mesa->estado == $estado) {
+    if ($mesa->estado != $estado) {
       $mesa->estado = $estado;
       Mesa::modificarMesa($mesa);
 
@@ -256,9 +285,8 @@ class PedidoController extends Pedido implements IApiUsable
       $final = date('Y-m-d H:i:s');
       $pedido->final = $final;
       $pedido->estado = "finalizado";
-      var_dump($pedido);
       Pedido::modificarPedido($pedido);
-      $payload = json_encode("La mesa ya se encuentra cerrada");
+      $payload = json_encode("Mesa cerrada exitosamente");
     }
 
     $response->getBody()->write($payload);

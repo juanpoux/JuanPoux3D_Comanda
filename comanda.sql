@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-07-2023 a las 17:47:27
+-- Tiempo de generación: 03-07-2023 a las 01:06:40
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -43,7 +43,7 @@ CREATE TABLE `calificaciones` (
 --
 
 INSERT INTO `calificaciones` (`id`, `codigoMesa`, `codigoPedido`, `notaMesa`, `notaRestaurante`, `notaCocinero`, `notaMozo`, `comentario`) VALUES
-(0, '5rew5', '44rr4', 7, 8, 9, 9, 'Muy rico todo!');
+(0, '4as55', 'k1HXV', 7, 8, 9, 9, 'Muy rico todo!');
 
 -- --------------------------------------------------------
 
@@ -65,38 +65,122 @@ CREATE TABLE `log` (
 --
 
 INSERT INTO `log` (`id`, `id_usuario`, `accion`, `status`, `fecha_accion`, `info`) VALUES
-(1, -1, 'GET - /usuarios', 401, '2023-07-02 11:12:34', 'ok'),
-(2, 2, 'POST - /login', 200, '2023-07-02 11:12:40', 'ok'),
-(3, 2, 'GET - /usuarios', 200, '2023-07-02 11:12:43', 'ok'),
-(4, 2, 'GET - /descargas/descargarLogo', 200, '2023-07-02 11:13:26', 'ok'),
-(5, 2, 'POST - /clientes/darOpinion', 200, '2023-07-02 11:46:50', 'ok'),
-(6, 2, 'POST - /clientes/darOpinion', 200, '2023-07-02 11:47:54', 'ok'),
-(7, 2, 'POST - /clientes/darOpinion', 401, '2023-07-02 11:48:38', 'ok'),
-(8, 2, 'POST - /clientes/darOpinion', 401, '2023-07-02 11:49:41', 'ok'),
-(9, 2, 'POST - /clientes/darOpinion', 401, '2023-07-02 11:50:03', 'ok'),
-(10, 2, 'POST - /clientes/darOpinion', 401, '2023-07-02 11:52:12', 'ok'),
-(11, 2, 'POST - /clientes/darOpinion', 200, '2023-07-02 11:53:01', 'ok'),
-(12, 2, 'POST - /clientes/darOpinion', 401, '2023-07-02 11:57:32', 'ok'),
-(13, 2, 'POST - /clientes/darOpinion', 401, '2023-07-02 11:58:04', 'ok'),
-(14, 2, 'POST - /clientes/darOpinion', 200, '2023-07-02 11:58:21', 'ok'),
-(15, 2, 'POST - /clientes/darOpinion', 401, '2023-07-02 12:07:20', 'ok'),
-(16, 2, 'POST - /clientes/darOpinion', 200, '2023-07-02 12:07:40', 'ok'),
-(17, -1, 'POST - /login', 401, '2023-07-02 12:10:22', 'Contraseña incorrecta - Usuario ingresado: carlitox'),
-(18, 2, 'PUT - /usuarios', 401, '2023-07-02 12:10:57', 'ok'),
-(19, 10, 'POST - /login', 200, '2023-07-02 12:11:02', 'ok'),
-(20, 10, 'PUT - /usuarios', 200, '2023-07-02 12:11:04', 'ok'),
-(21, 1, 'POST - /login', 200, '2023-07-02 12:11:08', 'ok'),
-(22, 1, 'POST - /clientes/darOpinion', 200, '2023-07-02 12:11:11', 'ok'),
-(23, 1, 'GET - /calificaciones/mejores', 200, '2023-07-02 12:12:12', 'ok'),
-(24, 1, 'GET - /calificaciones/mejores', 200, '2023-07-02 12:12:26', 'ok'),
-(25, 1, 'GET - /calificaciones/mejores', 200, '2023-07-02 12:12:58', 'ok'),
-(26, 1, 'GET - /calificaciones/mejores', 200, '2023-07-02 12:13:23', 'ok'),
-(27, 1, 'GET - /calificaciones/mejores', 200, '2023-07-02 12:13:33', 'ok'),
-(28, 1, 'GET - /calificaciones/mejores', 401, '2023-07-02 12:28:39', 'ok'),
-(29, 1, 'GET - /calificaciones/mejores', 200, '2023-07-02 12:29:17', 'ok'),
-(30, 1, 'GET - /calificaciones/mejores', 200, '2023-07-02 12:31:25', 'ok'),
-(31, 1, 'GET - /calificaciones/mejores', 200, '2023-07-02 12:31:28', 'ok'),
-(32, 1, 'GET - /mesas/masUsada', 200, '2023-07-02 12:35:11', 'ok');
+(1, 2, 'POST - /login', 200, '2023-07-02 18:36:37', 'ok'),
+(2, 2, 'POST - /mesas', 200, '2023-07-02 18:36:40', 'ok'),
+(3, 2, 'POST - /pedidos', 200, '2023-07-02 18:36:44', 'ok'),
+(4, 2, 'POST - /pedidos/cargarPedido/k1HXV', 200, '2023-07-02 18:36:54', 'ok'),
+(5, 2, 'POST - /pedidos/cargarPedido/k1HXV', 200, '2023-07-02 18:40:05', 'ok'),
+(6, 2, 'POST - /pedidos/cargarPedido/k1HXV', 200, '2023-07-02 18:41:00', 'ok'),
+(7, 2, 'POST - /pedidos/cargarPedido/k1HXV', 200, '2023-07-02 18:42:37', 'ok'),
+(8, 2, 'POST - /pedidos/cargarPedido/k1HXV', 200, '2023-07-02 18:43:40', 'ok'),
+(9, 2, 'POST - /pedidos/cargarPedido/k1HXV', 200, '2023-07-02 18:44:36', 'ok'),
+(10, 2, 'POST - /pedidos/cargarPedido/k1HXV', 200, '2023-07-02 18:44:49', 'ok'),
+(11, 2, 'POST - /pedidos/cargarPedido/4as55', 200, '2023-07-02 18:44:59', 'ok'),
+(12, 2, 'POST - /pedidos/cargarPedido/k1HXV', 200, '2023-07-02 18:45:17', 'ok'),
+(13, 2, 'POST - /pedidos/cargarPedido/k1HXV', 200, '2023-07-02 18:46:14', 'ok'),
+(14, 2, 'POST - /pedidos/cargarPedido/k1HXV', 200, '2023-07-02 18:46:30', 'ok'),
+(15, 2, 'POST - /pedidos/cargarPedido/k1HXV', 200, '2023-07-02 18:47:01', 'ok'),
+(16, 2, 'POST - /pedidos/cargarPedido/k1HXV', 200, '2023-07-02 18:47:08', 'ok'),
+(17, 2, 'POST - /pedidos/cargarPedido/k1HXV', 200, '2023-07-02 18:47:46', 'ok'),
+(18, 2, 'POST - /pedidos/cargarPedido/k1HXV', 200, '2023-07-02 18:47:51', 'ok'),
+(19, 2, 'POST - /pedidos/subirFoto/k1HXV', 200, '2023-07-02 18:48:51', 'ok'),
+(20, 3, 'POST - /login', 200, '2023-07-02 18:49:20', 'ok'),
+(21, 5, 'POST - /login', 200, '2023-07-02 18:50:19', 'ok'),
+(22, 5, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 18:50:27', 'ok'),
+(23, 5, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 18:51:06', 'ok'),
+(24, 5, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 18:57:52', 'ok'),
+(25, 5, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 18:58:12', 'ok'),
+(26, 5, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 18:58:26', 'ok'),
+(27, 5, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 18:58:31', 'ok'),
+(28, 5, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 18:59:07', 'ok'),
+(29, 3, 'POST - /login', 200, '2023-07-02 18:59:12', 'ok'),
+(30, 3, 'GET - /pedidos/traerProductosPedidos/pendiente', 200, '2023-07-02 18:59:17', 'ok'),
+(31, 3, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 18:59:23', 'ok'),
+(32, 3, 'GET - /pedidos/traerProductosPedidos/pendiente', 200, '2023-07-02 18:59:26', 'ok'),
+(33, 3, 'GET - /clientes/mostrarDemora/k1HXV/4as55', 200, '2023-07-02 19:01:10', 'ok'),
+(34, 3, 'GET - /pedidos/pedidosConDemora', 401, '2023-07-02 19:14:35', 'ok'),
+(35, 1, 'POST - /login', 200, '2023-07-02 19:14:39', 'ok'),
+(36, 1, 'POST - /login', 200, '2023-07-02 19:14:43', 'ok'),
+(37, 1, 'GET - /pedidos/pedidosConDemora', 200, '2023-07-02 19:14:48', 'ok'),
+(38, 1, 'GET - /clientes/mostrarDemora/k1HXV/4as55', 200, '2023-07-02 19:22:41', 'ok'),
+(39, 1, 'GET - /pedidos/pedidosConDemora', 200, '2023-07-02 19:22:47', 'ok'),
+(40, 3, 'POST - /login', 200, '2023-07-02 19:23:38', 'ok'),
+(41, 3, 'GET - /pedidos/traerProductosPedidos/pendiente', 200, '2023-07-02 19:23:44', 'ok'),
+(42, 3, 'POST - /login', 200, '2023-07-02 19:23:48', 'ok'),
+(43, 3, 'GET - /pedidos/traerProductosPedidos/pendiente', 200, '2023-07-02 19:23:50', 'ok'),
+(44, 5, 'POST - /login', 200, '2023-07-02 19:23:53', 'ok'),
+(45, 5, 'GET - /pedidos/traerProductosPedidos/pendiente', 200, '2023-07-02 19:23:57', 'ok'),
+(46, 5, 'GET - /pedidos/traerProductosPedidos/pendiente', 200, '2023-07-02 19:25:11', 'ok'),
+(47, 5, 'GET - /pedidos/traerProductosPedidos/en%20preparacion', 200, '2023-07-02 19:26:19', 'ok'),
+(48, 5, 'GET - /pedidos/traerProductosPedidos/en%20preparacion', 200, '2023-07-02 19:27:05', 'ok'),
+(49, 5, 'GET - /pedidos/traerProductosPedidos/en%20preparacion', 200, '2023-07-02 19:27:19', 'ok'),
+(50, 5, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 19:27:35', 'ok'),
+(51, 3, 'POST - /login', 200, '2023-07-02 19:27:42', 'ok'),
+(52, 3, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 19:27:46', 'ok'),
+(53, 4, 'POST - /login', 200, '2023-07-02 19:28:54', 'ok'),
+(54, 4, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 19:29:04', 'ok'),
+(55, 4, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 19:29:20', 'ok'),
+(56, 3, 'POST - /login', 200, '2023-07-02 19:29:56', 'ok'),
+(57, 3, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 19:30:01', 'ok'),
+(58, 3, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 19:30:07', 'ok'),
+(59, 3, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 19:30:11', 'ok'),
+(60, 3, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 19:30:15', 'ok'),
+(61, 5, 'POST - /login', 200, '2023-07-02 19:30:42', 'ok'),
+(62, 5, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 19:30:49', 'ok'),
+(63, 4, 'POST - /login', 200, '2023-07-02 19:30:54', 'ok'),
+(64, 4, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 19:31:13', 'ok'),
+(65, 4, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 19:31:28', 'ok'),
+(66, 4, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 19:31:43', 'ok'),
+(67, 5, 'POST - /login', 200, '2023-07-02 19:31:47', 'ok'),
+(68, 5, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 19:31:50', 'ok'),
+(69, 5, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 19:31:55', 'ok'),
+(70, 5, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 19:31:59', 'ok'),
+(71, 3, 'POST - /login', 200, '2023-07-02 19:32:03', 'ok'),
+(72, 3, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 19:32:05', 'ok'),
+(73, 2, 'POST - /login', 200, '2023-07-02 19:32:46', 'ok'),
+(74, 2, 'GET - /pedidos/traerPedidosListos', 200, '2023-07-02 19:32:50', 'ok'),
+(75, 2, 'GET - /pedidos/traerPedidosListos', 200, '2023-07-02 19:33:10', 'ok'),
+(76, 2, 'POST - /login', 200, '2023-07-02 19:33:20', 'ok'),
+(77, 2, 'GET - /pedidos/traerPedidosListos', 200, '2023-07-02 19:33:22', 'ok'),
+(78, 2, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 19:47:03', 'ok'),
+(79, 3, 'POST - /login', 200, '2023-07-02 19:47:56', 'ok'),
+(80, 3, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 19:47:59', 'ok'),
+(81, 3, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 19:48:07', 'ok'),
+(82, 3, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 19:48:18', 'ok'),
+(83, 3, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 19:48:32', 'ok'),
+(84, 3, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 19:51:20', 'ok'),
+(85, 3, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 19:51:23', 'ok'),
+(86, 3, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 19:52:44', 'ok'),
+(87, 3, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 19:52:47', 'ok'),
+(88, 3, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 19:53:09', 'ok'),
+(89, 3, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 19:53:12', 'ok'),
+(90, 3, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 19:54:38', 'ok'),
+(91, 3, 'PUT - /pedidos/cambiarEstadoProducto', 200, '2023-07-02 19:54:52', 'ok'),
+(92, 3, 'GET - /pedidos/traerPedidosListos', 401, '2023-07-02 19:55:21', 'ok'),
+(93, 2, 'POST - /login', 200, '2023-07-02 19:55:24', 'ok'),
+(94, 2, 'GET - /pedidos/traerPedidosListos', 200, '2023-07-02 19:55:26', 'ok'),
+(95, 2, 'PUT - /pedidos/servirPedido', 401, '2023-07-02 19:55:45', 'ok'),
+(96, 2, 'PUT - /pedidos/servirPedido', 401, '2023-07-02 19:57:09', 'ok'),
+(97, 2, 'PUT - /pedidos/servirPedido', 401, '2023-07-02 19:57:50', 'ok'),
+(98, 2, 'PUT - /pedidos/servirPedido', 200, '2023-07-02 19:58:27', 'ok'),
+(99, 1, 'POST - /login', 200, '2023-07-02 19:59:03', 'ok'),
+(100, 1, 'GET - /mesas/listarMesas', 200, '2023-07-02 19:59:06', 'ok'),
+(101, 2, 'POST - /login', 200, '2023-07-02 19:59:16', 'ok'),
+(102, 2, 'PUT - /mesas/cambiarEstado', 200, '2023-07-02 19:59:30', 'ok'),
+(103, 1, 'POST - /login', 200, '2023-07-02 19:59:40', 'ok'),
+(104, 1, 'PUT - /mesas/cerrarMesa', 200, '2023-07-02 19:59:48', 'ok'),
+(105, 1, 'POST - /clientes/darOpinion', 200, '2023-07-02 20:00:12', 'ok'),
+(106, 1, 'POST - /login', 200, '2023-07-02 20:00:17', 'ok'),
+(107, 1, 'GET - /calificaciones/mejores', 200, '2023-07-02 20:00:20', 'ok'),
+(108, 1, 'POST - /login', 200, '2023-07-02 20:00:26', 'ok'),
+(109, 1, 'GET - /mesas/masUsada', 200, '2023-07-02 20:00:29', 'ok'),
+(110, 1, 'PUT - /mesas/cerrarMesa', 200, '2023-07-02 20:00:57', 'ok'),
+(111, 1, 'PUT - /mesas/cerrarMesa', 200, '2023-07-02 20:01:51', 'ok'),
+(112, 1, 'PUT - /mesas/cerrarMesa', 200, '2023-07-02 20:02:15', 'ok'),
+(113, 1, 'PUT - /mesas/cerrarMesa', 200, '2023-07-02 20:02:46', 'ok'),
+(114, 1, 'GET - /usuarios/descargarCSV', 200, '2023-07-02 20:04:06', 'ok'),
+(115, 1, 'POST - /cargaForzadaCSV/usuarios', 200, '2023-07-02 20:04:29', 'ok'),
+(116, 1, 'POST - /cargaForzadaCSV/usuarios', 200, '2023-07-02 20:04:47', 'ok');
 
 -- --------------------------------------------------------
 
@@ -116,7 +200,7 @@ CREATE TABLE `mesas` (
 --
 
 INSERT INTO `mesas` (`id`, `estado`, `codigo`, `fechaCreacion`) VALUES
-(1, 'cerrada', '5rew5', '2023-06-25');
+(1, 'cerrada', '4as55', '2023-07-02');
 
 -- --------------------------------------------------------
 
@@ -138,10 +222,10 @@ CREATE TABLE `pedidoproducto` (
 --
 
 INSERT INTO `pedidoproducto` (`codigoPedido`, `idProducto`, `cantidad`, `inicio`, `final`, `estado`) VALUES
-('44eee', 4, 1, '2023-06-26 13:35:44', '2023-06-26 13:45:44', 'entregado'),
-('44eee', 5, 2, '2023-06-26 13:36:18', '2023-06-26 13:46:18', 'entregado'),
-('44eee', 6, 1, '2023-06-26 13:36:21', '2023-06-26 13:46:21', 'entregado'),
-('44eee', 2, 1, '2023-06-26 13:36:08', '2023-06-26 13:46:08', 'entregado');
+('k1HXV', 4, 1, '2023-07-02 18:58:12', '2023-07-02 19:08:12', 'entregado'),
+('k1HXV', 5, 2, '2023-07-02 18:58:26', '2023-07-02 19:08:26', 'entregado'),
+('k1HXV', 6, 1, '2023-07-02 19:31:13', '2023-07-02 19:41:13', 'entregado'),
+('k1HXV', 2, 1, '2023-07-02 19:54:38', '2023-07-02 20:04:38', 'entregado');
 
 -- --------------------------------------------------------
 
@@ -164,9 +248,7 @@ CREATE TABLE `pedidos` (
 --
 
 INSERT INTO `pedidos` (`id`, `codigoMesa`, `codigo`, `idUsuario`, `estado`, `inicio`, `final`) VALUES
-(1, '5rew5', '44rr4', 2, 'finalizado', '2023-06-25 21:35:51', '2023-06-29 20:53:30'),
-(2, '5rew5', '44eee', 2, 'finalizado', '2023-06-26 00:05:59', '2023-06-29 20:56:49'),
-(3, 'qwe22', 'Tz6lT', 2, 'En preparacion', '2023-06-26 12:38:42', NULL);
+(1, '4as55', 'k1HXV', 2, 'finalizado', '2023-07-02 18:36:44', '2023-07-02 20:02:15');
 
 -- --------------------------------------------------------
 
@@ -192,7 +274,7 @@ INSERT INTO `productos` (`id`, `precio`, `tipo`, `nombre`, `rol`) VALUES
 (3, 1000, 'bebida', 'IPA', 'cervecero'),
 (4, 2900, 'comida', 'Milanesa a caballo', 'cocinero'),
 (5, 2100, 'comida', 'Hamburguesa de garbanzo', 'cocinero'),
-(6, 1100, 'bebida', 'Corona', 'bebida');
+(6, 1100, 'bebida', 'Corona', 'cervecero');
 
 -- --------------------------------------------------------
 
@@ -221,8 +303,8 @@ INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `clave`, `rol`, `fechaInicio`
 (3, 'Camila', 'camila', '$2y$10$gNkxLdblmWzhH0124qAqOe0TcEDSfQiI56Ygwsv2tVkbHSoMiOqEG', 'bartender', '2023-06-25 15:58:42', 'activo', NULL),
 (4, 'Pedro', 'pedritox', '$2y$10$f6m2V.A9AME0Jw3vJeH8cev1NUBJUrBe8/kr58psnblahsx7jv9oq', 'cervecero', '2023-06-25 15:58:42', 'activo', NULL),
 (5, 'Francisco', 'pancho', '$2y$10$geNAObttETOhYUAY.5E8Du3jE9g1qbvJB.PYQFHbY7gKRFTIVNUQa', 'cocinero', '2023-06-25 15:58:42', 'activo', NULL),
-(9, 'Federico', 'fefe', '$2y$10$8j1P8wnjpk089xvW8a.w9uJmXlK2Vk/83bGNhprA8OURvWNhOEBcO', 'cocinero', '2023-06-26 11:11:09', 'activo', NULL),
-(10, 'Juan Poux', 'juan', '$2y$10$dVbwMFmH1Ko3UX6v3CGkeOtcMVgh/k8opNPx2z3LJA8zeuNA6dFrC', 'socio', '2023-07-01 19:29:40', 'activo', NULL);
+(10, 'Juan Poux', 'juan', '$2y$10$dVbwMFmH1Ko3UX6v3CGkeOtcMVgh/k8opNPx2z3LJA8zeuNA6dFrC', 'socio', '2023-07-01 19:29:40', 'activo', NULL),
+(11, 'Federico', 'fefe', '$2y$10$II.QMJ333/L.ZFCQlZyeaONHzhctsUKNAoJQIQD6B3OYwquBl/6Be', 'cocinero', '2023-07-02 20:04:47', 'activo', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -272,7 +354,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `log`
 --
 ALTER TABLE `log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
 
 --
 -- AUTO_INCREMENT de la tabla `mesas`
@@ -284,7 +366,7 @@ ALTER TABLE `mesas`
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
@@ -296,7 +378,7 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -58,7 +58,7 @@ $app->group('/usuarios', function (RouteCollectorProxy $group) {
   $group->get('/activos', \UsuarioController::class . ':TraerTodosActivos')->add(new MWVerificar("todos"));
   $group->get('[/]', \UsuarioController::class . ':TraerTodos')->add(new MWVerificar("todos"));
   $group->get('/{usuario}', \UsuarioController::class . ':TraerUno')->add(new MWVerificar("todos"));
-  $group->post('[/]', \UsuarioController::class . ':CargarUno')->add(new MWVerificar("socio"));
+  $group->post('[/]', \UsuarioController::class . ':CargarUno')->add(new MWVerificar("todos"));
   $group->put('[/]', \UsuarioController::class . ':ModificarUno')->add(new MWVerificar("socio"));
   $group->delete('/{id}', \UsuarioController::class . ':BorrarUno')->add(new MWVerificar("socio"));
 })->add(new MWLogOperaciones());
@@ -105,7 +105,7 @@ $app->group('/pedidos', function (RouteCollectorProxy $group) {
 
 // clientes
 $app->group('/clientes', function (RouteCollectorProxy $group) {
-  $group->get('/mostrarDemora/{codigoPedido}/{idProducto}', \PedidoController::class . ':TraerDemora')->add(new MWVerificar("todos"));
+  $group->get('/mostrarDemora/{codigoPedido}/{codigoMesa}', \PedidoController::class . ':TraerDemora')->add(new MWVerificar("todos"));
   $group->post('/darOpinion', \EncuestaController::class . ':CargarUno')->add(new MWVerificar("todos"));
 })->add(new MWLogOperaciones());
 

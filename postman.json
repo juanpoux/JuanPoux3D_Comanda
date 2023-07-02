@@ -724,7 +724,7 @@
 							"response": []
 						},
 						{
-							"name": "login moza Copy",
+							"name": "crear mesa",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -732,26 +732,20 @@
 									"mode": "formdata",
 									"formdata": [
 										{
-											"key": "usuario",
-											"value": "juanchopo",
-											"type": "text"
-										},
-										{
-											"key": "clave",
-											"value": "juanchopo",
+											"key": "codigo",
+											"value": "4as55",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "http://localhost:666/login",
-									"protocol": "http",
+									"raw": "localhost:666/mesas",
 									"host": [
 										"localhost"
 									],
 									"port": "666",
 									"path": [
-										"login"
+										"mesas"
 									]
 								}
 							},
@@ -766,8 +760,8 @@
 									"mode": "formdata",
 									"formdata": [
 										{
-											"key": "codigo",
-											"value": "44eee",
+											"key": "codigoMesa",
+											"value": "4as55",
 											"type": "text"
 										}
 									]
@@ -806,7 +800,7 @@
 									]
 								},
 								"url": {
-									"raw": "localhost:666/pedidos/cargarPedido/44eee",
+									"raw": "localhost:666/pedidos/cargarPedido/k1HXV",
 									"host": [
 										"localhost"
 									],
@@ -814,7 +808,7 @@
 									"path": [
 										"pedidos",
 										"cargarPedido",
-										"44eee"
+										"k1HXV"
 									]
 								}
 							},
@@ -841,7 +835,7 @@
 									]
 								},
 								"url": {
-									"raw": "localhost:666/pedidos/cargarPedido/44eee",
+									"raw": "localhost:666/pedidos/cargarPedido/k1HXV",
 									"host": [
 										"localhost"
 									],
@@ -849,7 +843,7 @@
 									"path": [
 										"pedidos",
 										"cargarPedido",
-										"44eee"
+										"k1HXV"
 									]
 								}
 							},
@@ -876,7 +870,7 @@
 									]
 								},
 								"url": {
-									"raw": "localhost:666/pedidos/cargarPedido/44eee",
+									"raw": "localhost:666/pedidos/cargarPedido/k1HXV",
 									"host": [
 										"localhost"
 									],
@@ -884,7 +878,7 @@
 									"path": [
 										"pedidos",
 										"cargarPedido",
-										"44eee"
+										"k1HXV"
 									]
 								}
 							},
@@ -911,7 +905,7 @@
 									]
 								},
 								"url": {
-									"raw": "localhost:666/pedidos/cargarPedido/44eee",
+									"raw": "localhost:666/pedidos/cargarPedido/k1HXV",
 									"host": [
 										"localhost"
 									],
@@ -919,7 +913,7 @@
 									"path": [
 										"pedidos",
 										"cargarPedido",
-										"44eee"
+										"k1HXV"
 									]
 								}
 							},
@@ -941,18 +935,12 @@
 										{
 											"key": "imagen",
 											"type": "file",
-											"src": "/C:/Users/Juan/Desktop/RAO/casa1.jpg"
-										},
-										{
-											"key": "codigoPedido",
-											"value": "",
-											"type": "text",
-											"disabled": true
+											"src": "/C:/Users/juanp/OneDrive/Escritorio/descarga.jfif"
 										}
 									]
 								},
 								"url": {
-									"raw": "localhost:666/pedidos/subirFoto/44eee",
+									"raw": "localhost:666/pedidos/subirFoto/k1HXV",
 									"host": [
 										"localhost"
 									],
@@ -960,7 +948,7 @@
 									"path": [
 										"pedidos",
 										"subirFoto",
-										"44eee"
+										"k1HXV"
 									],
 									"query": [
 										{
@@ -1048,6 +1036,40 @@
 							"response": []
 						},
 						{
+							"name": "login cervecero",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "usuario",
+											"value": "pedritox",
+											"type": "text"
+										},
+										{
+											"key": "clave",
+											"value": "pedritox",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "Productos Pendientes del usuario logueado",
 							"request": {
 								"method": "GET",
@@ -1068,7 +1090,7 @@
 							"response": []
 						},
 						{
-							"name": "Cambiar estado pedido Copy",
+							"name": "Cambiar estado pedido",
 							"request": {
 								"method": "PUT",
 								"header": [],
@@ -1082,12 +1104,12 @@
 										},
 										{
 											"key": "idProducto",
-											"value": "6",
+											"value": "2",
 											"type": "text"
 										},
 										{
 											"key": "codigoPedido",
-											"value": "44eee",
+											"value": "k1HXV",
 											"type": "text"
 										},
 										{
@@ -1122,7 +1144,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "localhost:666/clientes/mostrarDemora/44eee/4",
+									"raw": "localhost:666/clientes/mostrarDemora/k1HXV/4as55",
 									"host": [
 										"localhost"
 									],
@@ -1130,8 +1152,8 @@
 									"path": [
 										"clientes",
 										"mostrarDemora",
-										"44eee",
-										"4"
+										"k1HXV",
+										"4as55"
 									]
 								}
 							},
@@ -1235,12 +1257,80 @@
 							"response": []
 						},
 						{
+							"name": "login cocinero",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "usuario",
+											"value": "pancho",
+											"type": "text"
+										},
+										{
+											"key": "clave",
+											"value": "pancho",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login cervecero",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "usuario",
+											"value": "pedritox",
+											"type": "text"
+										},
+										{
+											"key": "clave",
+											"value": "pedritox",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "Productos Pendientes del usuario logueado",
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "localhost:666/pedidos/traerProductosPedidos/pendiente",
+									"raw": "localhost:666/pedidos/traerProductosPedidos/en%20preparacion",
 									"host": [
 										"localhost"
 									],
@@ -1248,7 +1338,7 @@
 									"path": [
 										"pedidos",
 										"traerProductosPedidos",
-										"pendiente"
+										"en%20preparacion"
 									]
 								}
 							},
@@ -1269,12 +1359,12 @@
 										},
 										{
 											"key": "idProducto",
-											"value": "6",
+											"value": "2",
 											"type": "text"
 										},
 										{
 											"key": "codigoPedido",
-											"value": "44eee",
+											"value": "k1HXV",
 											"type": "text"
 										},
 										{
@@ -1373,7 +1463,7 @@
 									"urlencoded": [
 										{
 											"key": "codigoPedido",
-											"value": "44eee",
+											"value": "k1HXV",
 											"type": "text"
 										}
 									]
@@ -1507,7 +1597,7 @@
 									"urlencoded": [
 										{
 											"key": "codigoMesa",
-											"value": "5rew5",
+											"value": "4as55",
 											"type": "text"
 										},
 										{
@@ -1580,7 +1670,7 @@
 									"urlencoded": [
 										{
 											"key": "codigoMesa",
-											"value": "5rew5",
+											"value": "4as55",
 											"type": "text"
 										}
 									]
@@ -1594,6 +1684,275 @@
 									"path": [
 										"mesas",
 										"cerrarMesa"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "11- El cliente ingresa el código de mesa y el del pedido junto con los datos de la encuesta.",
+					"item": [
+						{
+							"name": "encuesta",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "codigoMesa",
+											"value": "4as55",
+											"type": "text"
+										},
+										{
+											"key": "codigoPedido",
+											"value": "k1HXV",
+											"type": "text"
+										},
+										{
+											"key": "notaMesa",
+											"value": "7",
+											"type": "text"
+										},
+										{
+											"key": "notaRestaurante",
+											"value": "8",
+											"type": "text"
+										},
+										{
+											"key": "notaCocinero",
+											"value": "9",
+											"type": "text"
+										},
+										{
+											"key": "notaMozo",
+											"value": "9",
+											"type": "text"
+										},
+										{
+											"key": "comentario",
+											"value": "Muy rico todo!",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/clientes/darOpinion",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"clientes",
+										"darOpinion"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "12- Alguno de los socios pide los mejores comentarios",
+					"item": [
+						{
+							"name": "login socio",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "usuario",
+											"value": "carlitox",
+											"type": "text"
+										},
+										{
+											"key": "clave",
+											"value": "carlitox",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mejores comentarios",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "codigoMesa",
+											"value": "5rew5",
+											"type": "text"
+										},
+										{
+											"key": "codigoPedido",
+											"value": "44rr4",
+											"type": "text"
+										},
+										{
+											"key": "notaMesa",
+											"value": "7",
+											"type": "text"
+										},
+										{
+											"key": "notaRestaurante",
+											"value": "8",
+											"type": "text"
+										},
+										{
+											"key": "notaCocinero",
+											"value": "9",
+											"type": "text"
+										},
+										{
+											"key": "notaMozo",
+											"value": "9",
+											"type": "text"
+										},
+										{
+											"key": "comentario",
+											"value": "Muy rico todo!",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/calificaciones/mejores",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"calificaciones",
+										"mejores"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "13- Alguno de los socios pide la mesa más usada.",
+					"item": [
+						{
+							"name": "login socio",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "usuario",
+											"value": "carlitox",
+											"type": "text"
+										},
+										{
+											"key": "clave",
+											"value": "carlitox",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mesa mas usada",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "codigoMesa",
+											"value": "5rew5",
+											"type": "text"
+										},
+										{
+											"key": "codigoPedido",
+											"value": "44rr4",
+											"type": "text"
+										},
+										{
+											"key": "notaMesa",
+											"value": "7",
+											"type": "text"
+										},
+										{
+											"key": "notaRestaurante",
+											"value": "8",
+											"type": "text"
+										},
+										{
+											"key": "notaCocinero",
+											"value": "9",
+											"type": "text"
+										},
+										{
+											"key": "notaMozo",
+											"value": "9",
+											"type": "text"
+										},
+										{
+											"key": "comentario",
+											"value": "Muy rico todo!",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/mesas/masUsada",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"mesas",
+										"masUsada"
 									]
 								}
 							},

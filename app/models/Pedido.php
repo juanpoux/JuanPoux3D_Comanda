@@ -121,12 +121,22 @@ class Pedido
         return $consulta->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public static function obtenerPedidoProductoConFechasPorCodigo($codigo, $idProducto)
+    public static function obtenerPedidoProductoPorCodigoYEstado($codigo, $estado)
     {
         $objAccesoDatos = AccesoDatos::obtenerInstancia();
-        $consulta = $objAccesoDatos->prepararConsulta("SELECT * FROM pedidoproducto WHERE codigoPedido = :codigo AND idProducto = :idProducto");
+        $consulta = $objAccesoDatos->prepararConsulta("SELECT codigoPedido, idProducto, cantidad, estado FROM pedidoproducto WHERE codigoPedido = :codigoPedido AND estado = :estado LIMIT 1");
+        $consulta->bindValue(':codigoPedido', $codigo, PDO::PARAM_STR);
+        $consulta->bindValue(':estado', $estado, PDO::PARAM_STR);
+        $consulta->execute();
+
+        return $consulta->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public static function obtenerPedidoProductoConFechasPorCodigo($codigo)
+    {
+        $objAccesoDatos = AccesoDatos::obtenerInstancia();
+        $consulta = $objAccesoDatos->prepararConsulta("SELECT * FROM pedidoproducto WHERE codigoPedido = :codigo");
         $consulta->bindValue(':codigo', $codigo, PDO::PARAM_STR);
-        $consulta->bindValue(':idProducto', $idProducto, PDO::PARAM_INT);
         $consulta->execute();
 
         return $consulta->fetch(PDO::FETCH_ASSOC);
@@ -212,7 +222,7 @@ class Pedido
     public static function actualizarEstadoPedidoProductoTodos($codigoPedido, $estado)
     {
         $objAccesoDatos = AccesoDatos::obtenerInstancia();
-        $consulta = $objAccesoDatos->prepararConsulta("UPDATE pedidoproducto SET estado = :estado WHERE codigoPedido = :codigoPedido AND idProducto = :idProducto");
+        $consulta = $objAccesoDatos->prepararConsulta("UPDATE pedidoproducto SET estado = :estado WHERE codigoPedido = :codigoPedido");
         $consulta->bindValue(':codigoPedido', $codigoPedido, PDO::PARAM_STR);
         $consulta->bindValue(':estado', $estado, PDO::PARAM_STR);
         $consulta->execute();
@@ -222,7 +232,7 @@ class Pedido
     public static function actualizarEstadoPedido($codigoPedido, $estado)
     {
         $objAccesoDatos = AccesoDatos::obtenerInstancia();
-        $consulta = $objAccesoDatos->prepararConsulta("UPDATE pedidos SET estado = :estado WHERE codigoPedido = :codigoPedido");
+        $consulta = $objAccesoDatos->prepararConsulta("UPDATE pedidos SET estado = :estado WHERE codigo = :codigoPedido");
         $consulta->bindValue(':codigoPedido', $codigoPedido, PDO::PARAM_STR);
         $consulta->bindValue(':estado', $estado, PDO::PARAM_STR);
         $consulta->execute();
@@ -241,6 +251,16 @@ class Pedido
         $minutos = $interval->format('%i');
 
         return $minutos;
+    }
+
+    public static function obtenerPedidosConDemoraPorCodigoPedido($codigoPedido)
+    {
+        $objAccesoDatos = AccesoDatos::obtenerInstancia();
+        $consulta = $objAccesoDatos->prepararConsulta("SELECT codigoPedido, idProducto, estado, TIMESTAMPDIFF(MINUTE, inicio, final) AS demoraMinutos FROM pedidoproducto WHERE codigoPedido = :codigoPedido");
+        $consulta->bindValue(':codigoPedido', $codigoPedido, PDO::PARAM_STR);
+        $consulta->execute();
+
+        return $consulta->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public static function obtenerPedidosConDemora()

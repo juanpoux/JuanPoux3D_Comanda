@@ -1,7 +1,8 @@
-id,nombre,usuario,clave,rol
-1,Carlos,carlitox,$2y$10$6KBzwg92Y0GYgTXvVedUHeRbNMDjMYwNZvf1kG5fUCzqmY/OWa.k6,socio
-2,Juan,juanchopo,$2y$10$564AOvjpNjR3tUP3JLRinO8VKrSbe7v98j0vXPFW2fzBAUparh1PO,mozo
-3,Camila,camila,$2y$10$gNkxLdblmWzhH0124qAqOe0TcEDSfQiI56Ygwsv2tVkbHSoMiOqEG,bartender
-4,Pedro,pedritox,$2y$10$f6m2V.A9AME0Jw3vJeH8cev1NUBJUrBe8/kr58psnblahsx7jv9oq,cervecero
-5,Francisco,pancho,$2y$10$geNAObttETOhYUAY.5E8Du3jE9g1qbvJB.PYQFHbY7gKRFTIVNUQa,cocinero
-6,Federico,fefe,fefe,cocinero
+id,nombre,usuario,clave,rol,estado
+1,Carlos,carlitox,$2y$10$7MnI4m1SuCxEtyvd91vEb.lQAHOvIYX5CTQ0esTvbT/y4a.7qzNcq,socio,activo
+2,Juan,juanchopo,$2y$10$564AOvjpNjR3tUP3JLRinO8VKrSbe7v98j0vXPFW2fzBAUparh1PO,mozo,activo
+3,Camila,camila,$2y$10$gNkxLdblmWzhH0124qAqOe0TcEDSfQiI56Ygwsv2tVkbHSoMiOqEG,bartender,activo
+4,Pedro,pedritox,$2y$10$f6m2V.A9AME0Jw3vJeH8cev1NUBJUrBe8/kr58psnblahsx7jv9oq,cervecero,activo
+5,Francisco,pancho,$2y$10$geNAObttETOhYUAY.5E8Du3jE9g1qbvJB.PYQFHbY7gKRFTIVNUQa,cocinero,activo
+9,Federico,fefe,$2y$10$8j1P8wnjpk089xvW8a.w9uJmXlK2Vk/83bGNhprA8OURvWNhOEBcO,cocinero,activo
+10,Juan Poux,juan,$2y$10$dVbwMFmH1Ko3UX6v3CGkeOtcMVgh/k8opNPx2z3LJA8zeuNA6dFrC,socio,activo
