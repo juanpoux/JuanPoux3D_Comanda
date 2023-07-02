@@ -19,22 +19,22 @@
 							"formdata": [
 								{
 									"key": "nombre",
-									"value": "Francisco",
+									"value": "Juan Poux",
 									"type": "text"
 								},
 								{
 									"key": "usuario",
-									"value": "pancho",
+									"value": "juan",
 									"type": "text"
 								},
 								{
 									"key": "clave",
-									"value": "pancho",
+									"value": "juan",
 									"type": "text"
 								},
 								{
 									"key": "rol",
-									"value": "cocinero",
+									"value": "socio",
 									"type": "text"
 								}
 							]
@@ -81,6 +81,117 @@
 					"response": []
 				},
 				{
+					"name": "modificar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2ODcyOTg2NjgsImV4cCI6MTY4NzM1ODY2OCwiYXVkIjoiMjdjZTFiYTFlZjBmMjI4ZWRkZjg2ODJjNDg3YWI3YjczOGY0NDdhYSIsImRhdGEiOnsidGlwbyI6IkNvY2luZXJvIiwiaWQiOjd9LCJhcHAiOiJUZXN0IEpXVCJ9.UCtwPPHjabJvsqaVJcRMcga9DlYj1G3eAPzjpEMLfCo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "nombre",
+									"value": "Carlos",
+									"type": "text"
+								},
+								{
+									"key": "usuario",
+									"value": "carlitox",
+									"type": "text"
+								},
+								{
+									"key": "clave",
+									"value": "carlitox",
+									"type": "text"
+								},
+								{
+									"key": "rol",
+									"value": "socio",
+									"type": "text"
+								},
+								{
+									"key": "estado",
+									"value": "activo",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:666/usuarios",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtener activos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2ODcyOTg2NjgsImV4cCI6MTY4NzM1ODY2OCwiYXVkIjoiMjdjZTFiYTFlZjBmMjI4ZWRkZjg2ODJjNDg3YWI3YjczOGY0NDdhYSIsImRhdGEiOnsidGlwbyI6IkNvY2luZXJvIiwiaWQiOjd9LCJhcHAiOiJUZXN0IEpXVCJ9.UCtwPPHjabJvsqaVJcRMcga9DlYj1G3eAPzjpEMLfCo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:666/usuarios/activos",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"usuarios",
+								"activos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "borrar uno",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:666/usuarios/9",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"usuarios",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "obtener uno",
 					"request": {
 						"method": "GET",
@@ -114,6 +225,40 @@
 								{
 									"key": "clave",
 									"value": "juanchopo",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login socio",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "usuario",
+									"value": "juan",
+									"type": "text"
+								},
+								{
+									"key": "clave",
+									"value": "juan",
 									"type": "text"
 								}
 							]
@@ -452,6 +597,30 @@
 			]
 		},
 		{
+			"name": "Manejo PDF",
+			"item": [
+				{
+					"name": "Descargar logo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:666/descargas/descargarLogo",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"descargas",
+								"descargarLogo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "JWT",
 			"item": [
 				{
@@ -522,6 +691,40 @@
 					"item": [
 						{
 							"name": "login moza",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "usuario",
+											"value": "juanchopo",
+											"type": "text"
+										},
+										{
+											"key": "clave",
+											"value": "juanchopo",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login moza Copy",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -1193,7 +1396,7 @@
 					]
 				},
 				{
-					"name": "❏ 8- Alguno de los socios pide el listado de las mesas y sus estados .",
+					"name": "8- Alguno de los socios pide el listado de las mesas y sus estados .",
 					"item": [
 						{
 							"name": "login socio",
@@ -1250,6 +1453,147 @@
 									"path": [
 										"mesas",
 										"listarMesas"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "9- La moza cobra la cuenta.",
+					"item": [
+						{
+							"name": "login moza",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "usuario",
+											"value": "juanchopo",
+											"type": "text"
+										},
+										{
+											"key": "clave",
+											"value": "juanchopo",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cobrar cuenta",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "codigoMesa",
+											"value": "5rew5",
+											"type": "text"
+										},
+										{
+											"key": "estado",
+											"value": "con cliente pagando",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:666/mesas/cambiarEstado",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"mesas",
+										"cambiarEstado"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "10- Alguno de los socios cierra la mesa.",
+					"item": [
+						{
+							"name": "login socio",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "usuario",
+											"value": "carlitox",
+											"type": "text"
+										},
+										{
+											"key": "clave",
+											"value": "carlitox",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cerrar mesa",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "codigoMesa",
+											"value": "5rew5",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:666/mesas/cerrarMesa",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"mesas",
+										"cerrarMesa"
 									]
 								}
 							},
