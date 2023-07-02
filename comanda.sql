@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-07-2023 a las 15:41:16
--- Versión del servidor: 10.4.27-MariaDB
--- Versión de PHP: 8.2.0
+-- Tiempo de generación: 02-07-2023 a las 17:47:27
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,30 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `comanda`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `calificaciones`
+--
+
+CREATE TABLE `calificaciones` (
+  `id` int(11) NOT NULL,
+  `codigoMesa` varchar(5) NOT NULL,
+  `codigoPedido` varchar(5) NOT NULL,
+  `notaMesa` int(11) NOT NULL,
+  `notaRestaurante` int(11) NOT NULL,
+  `notaCocinero` int(11) NOT NULL,
+  `notaMozo` int(11) NOT NULL,
+  `comentario` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `calificaciones`
+--
+
+INSERT INTO `calificaciones` (`id`, `codigoMesa`, `codigoPedido`, `notaMesa`, `notaRestaurante`, `notaCocinero`, `notaMozo`, `comentario`) VALUES
+(0, '5rew5', '44rr4', 7, 8, 9, 9, 'Muy rico todo!');
 
 -- --------------------------------------------------------
 
@@ -41,89 +65,38 @@ CREATE TABLE `log` (
 --
 
 INSERT INTO `log` (`id`, `id_usuario`, `accion`, `status`, `fecha_accion`, `info`) VALUES
-(1, -1, 'GET - /mesas/listarMesas', 200, '2023-07-01 18:06:15', 'ok'),
-(2, -1, 'GET - /mesas/listarMesas', 200, '2023-07-01 18:08:06', 'ok'),
-(3, -1, 'GET - /mesas/listarMesas', 200, '2023-07-01 18:08:13', 'ok'),
-(4, -1, 'GET - /mesas/listarMesas', 200, '2023-07-01 18:09:34', 'ok'),
-(5, -1, 'GET - /mesas/listarMesas', 200, '2023-07-01 18:10:18', 'ok'),
-(6, -1, 'GET - /mesas/listarMesas', 200, '2023-07-01 18:10:37', 'ok'),
-(7, -1, 'GET - /mesas/listarMesas', 401, '2023-07-01 18:12:54', 'ok'),
-(8, -1, 'GET - /mesas/listarMesas', 200, '2023-07-01 18:13:36', 'ok'),
-(9, -1, 'GET - /mesas/listarMesas', 401, '2023-07-01 18:19:55', 'ok'),
-(10, -1, 'POST - /login', 200, '2023-07-01 18:26:49', 'ok'),
-(11, -1, 'Login', 401, '2023-07-01 18:27:23', '\"Contrase\\u00f1a incorrecta\" - carlitox'),
-(12, -1, 'POST - /login', 200, '2023-07-01 18:27:23', 'ok'),
-(13, -1, 'POST - /login', 401, '2023-07-01 18:32:26', '\"Contrase\\u00f1a incorrecta\" - carlitox'),
-(14, -1, 'POST - /login', 401, '2023-07-01 18:32:30', '\"Contrase\\u00f1a incorrecta\" - carlitox'),
-(15, -1, 'POST - /login', 401, '2023-07-01 18:32:30', '\"Contrase\\u00f1a incorrecta\" - carlitox'),
-(16, -1, 'POST - /login', 401, '2023-07-01 18:32:31', '\"Contrase\\u00f1a incorrecta\" - carlitox'),
-(17, -1, 'POST - /login', 401, '2023-07-01 18:33:21', '\"Contrase\\u00f1a incorrecta\" - juanchopo'),
-(18, 2, 'POST - /login', 200, '2023-07-01 18:34:14', '{\"OK\":\"Usuario de rol \'mozo\' inici\\u00f3 sesi\\u00f3n con \\u00e9xito\"} - juanchopo'),
-(19, 2, 'POST - /login', 200, '2023-07-01 18:37:17', 'ok'),
-(20, -1, 'POST - /login', 401, '2023-07-01 18:37:22', '\"Contrase\\u00f1a incorrecta\" - juanchopo'),
-(21, -1, 'POST - /login', 401, '2023-07-01 18:38:34', '\"Contrase\\u00f1a incorrecta\" - juanchopo'),
-(22, -1, 'POST - /login', 401, '2023-07-01 18:40:43', 'Contraseña incorrecta - juanchopo'),
-(23, 2, 'POST - /login', 200, '2023-07-01 18:40:49', 'ok - juanchopo'),
-(24, 2, 'POST - /login', 200, '2023-07-01 18:41:19', 'ok'),
-(25, -1, 'POST - /login', 401, '2023-07-01 18:41:40', 'Contraseña incorrecta - Usuario ingresado: juanchopo'),
-(26, 2, 'GET - /usuarios', 200, '2023-07-01 18:51:03', 'ok'),
-(27, 2, 'GET - /usuarios', 200, '2023-07-01 18:51:13', 'ok'),
-(28, 2, 'GET - /usuarios', 200, '2023-07-01 18:51:32', 'ok'),
-(29, 2, 'GET - /usuarios', 200, '2023-07-01 18:51:43', 'ok'),
-(30, 2, 'GET - /usuarios/activos', 200, '2023-07-01 18:54:47', 'ok'),
-(31, 2, 'GET - /usuarios/activos', 200, '2023-07-01 18:55:29', 'ok'),
-(32, 2, 'GET - /usuarios/activos', 200, '2023-07-01 18:55:40', 'ok'),
-(33, 2, 'PUT - /usuarios', 200, '2023-07-01 19:14:14', 'ok'),
-(34, 2, 'PUT - /usuarios', 200, '2023-07-01 19:14:21', 'ok'),
-(35, 2, 'GET - /usuarios', 200, '2023-07-01 19:14:55', 'ok'),
-(36, 2, 'GET - /usuarios', 200, '2023-07-01 19:15:32', 'ok'),
-(37, 2, 'PUT - /usuarios', 200, '2023-07-01 19:17:35', 'ok'),
-(38, 2, 'PUT - /usuarios', 200, '2023-07-01 19:18:45', 'ok'),
-(39, 2, 'PUT - /usuarios', 200, '2023-07-01 19:19:54', 'ok'),
-(40, 2, 'PUT - /usuarios', 200, '2023-07-01 19:20:36', 'ok'),
-(41, 2, 'DELETE - /usuarios', 200, '2023-07-01 19:23:19', 'ok'),
-(42, 2, 'DELETE - /usuarios', 200, '2023-07-01 19:23:57', 'ok'),
-(43, 2, 'DELETE - /usuarios', 200, '2023-07-01 19:24:15', 'ok'),
-(44, 2, 'DELETE - /usuarios', 200, '2023-07-01 19:24:35', 'ok'),
-(45, 2, 'DELETE - /usuarios', 200, '2023-07-01 19:24:46', 'ok'),
-(46, 2, 'DELETE - /usuarios/9', 200, '2023-07-01 19:25:21', 'ok'),
-(47, 2, 'DELETE - /usuarios/9', 200, '2023-07-01 19:25:49', 'ok'),
-(48, 2, 'DELETE - /usuarios/9', 401, '2023-07-01 19:27:34', 'ok'),
-(49, -1, 'POST - /login', 401, '2023-07-01 19:27:40', 'Contraseña incorrecta - Usuario ingresado: carlitox'),
-(50, -1, 'POST - /login', 401, '2023-07-01 19:27:47', 'Contraseña incorrecta - Usuario ingresado: carlitox'),
-(51, -1, 'POST - /login', 401, '2023-07-01 19:27:57', 'Contraseña incorrecta - Usuario ingresado: carlitox'),
-(52, 2, 'POST - /login', 200, '2023-07-01 19:27:59', 'ok'),
-(53, -1, 'POST - /login', 401, '2023-07-01 19:28:14', 'Contraseña incorrecta - Usuario ingresado: carlitox'),
-(54, 1, 'POST - /login', 200, '2023-07-01 19:28:36', 'ok'),
-(55, 1, 'POST - /usuarios', 200, '2023-07-01 19:29:40', 'ok'),
-(56, 10, 'POST - /login', 200, '2023-07-01 19:30:04', 'ok'),
-(57, -1, 'POST - /login', 401, '2023-07-01 19:30:07', 'Contraseña incorrecta - Usuario ingresado: carlitox'),
-(58, 10, 'PUT - /usuarios', 200, '2023-07-01 19:32:26', 'ok'),
-(59, 10, 'PUT - /usuarios', 200, '2023-07-01 19:32:31', 'ok'),
-(60, 10, 'PUT - /usuarios', 200, '2023-07-01 19:33:01', 'ok'),
-(61, 10, 'PUT - /usuarios', 200, '2023-07-01 19:33:45', 'ok'),
-(62, 10, 'PUT - /usuarios', 200, '2023-07-01 19:34:53', 'ok'),
-(63, 10, 'PUT - /usuarios', 200, '2023-07-01 19:35:04', 'ok'),
-(64, -1, 'POST - /login', 401, '2023-07-01 19:35:13', 'Contraseña incorrecta - Usuario ingresado: carlitox'),
-(65, -1, 'POST - /login', 401, '2023-07-01 19:35:55', 'Contraseña incorrecta - Usuario ingresado: carlitox'),
-(66, -1, 'POST - /login', 401, '2023-07-01 19:36:01', 'Contraseña incorrecta - Usuario ingresado: carlitox'),
-(67, 10, 'PUT - /usuarios', 200, '2023-07-01 19:36:31', 'ok'),
-(68, 1, 'POST - /login', 200, '2023-07-01 19:36:36', 'ok'),
-(69, 1, 'PUT - /usuarios', 200, '2023-07-01 19:36:51', 'ok'),
-(70, 1, 'GET - /descargas/descargarLogo', 200, '2023-07-01 20:04:20', 'ok'),
-(71, 1, 'GET - /descargas/descargarLogo', 200, '2023-07-01 20:12:36', 'ok'),
-(72, 1, 'GET - /descargas/descargarLogo', 200, '2023-07-01 20:15:06', 'ok'),
-(73, 1, 'GET - /descargas/descargarLogo', 200, '2023-07-01 20:16:22', 'ok'),
-(74, 1, 'GET - /descargas/descargarLogo', 200, '2023-07-01 20:17:41', 'ok'),
-(75, 1, 'GET - /descargas/descargarLogo', 200, '2023-07-01 20:19:19', 'ok'),
-(76, 1, 'GET - /descargas/descargarLogo', 200, '2023-07-01 20:20:30', 'ok'),
-(77, 1, 'GET - /descargas/descargarLogo', 200, '2023-07-01 20:21:47', 'ok'),
-(78, 1, 'GET - /descargas/descargarLogo', 401, '2023-07-01 20:22:54', 'ok'),
-(79, 1, 'GET - /descargas/descargarLogo', 401, '2023-07-01 20:23:23', 'ok'),
-(80, 1, 'GET - /descargas/descargarLogo', 401, '2023-07-01 20:24:06', 'ok'),
-(81, 1, 'GET - /descargas/descargarLogo', 200, '2023-07-01 20:25:08', 'ok'),
-(82, 1, 'GET - /descargas/descargarLogo', 200, '2023-07-01 20:25:36', 'ok'),
-(83, 1, 'GET - /descargas/descargarLogo', 200, '2023-07-01 20:25:56', 'ok');
+(1, -1, 'GET - /usuarios', 401, '2023-07-02 11:12:34', 'ok'),
+(2, 2, 'POST - /login', 200, '2023-07-02 11:12:40', 'ok'),
+(3, 2, 'GET - /usuarios', 200, '2023-07-02 11:12:43', 'ok'),
+(4, 2, 'GET - /descargas/descargarLogo', 200, '2023-07-02 11:13:26', 'ok'),
+(5, 2, 'POST - /clientes/darOpinion', 200, '2023-07-02 11:46:50', 'ok'),
+(6, 2, 'POST - /clientes/darOpinion', 200, '2023-07-02 11:47:54', 'ok'),
+(7, 2, 'POST - /clientes/darOpinion', 401, '2023-07-02 11:48:38', 'ok'),
+(8, 2, 'POST - /clientes/darOpinion', 401, '2023-07-02 11:49:41', 'ok'),
+(9, 2, 'POST - /clientes/darOpinion', 401, '2023-07-02 11:50:03', 'ok'),
+(10, 2, 'POST - /clientes/darOpinion', 401, '2023-07-02 11:52:12', 'ok'),
+(11, 2, 'POST - /clientes/darOpinion', 200, '2023-07-02 11:53:01', 'ok'),
+(12, 2, 'POST - /clientes/darOpinion', 401, '2023-07-02 11:57:32', 'ok'),
+(13, 2, 'POST - /clientes/darOpinion', 401, '2023-07-02 11:58:04', 'ok'),
+(14, 2, 'POST - /clientes/darOpinion', 200, '2023-07-02 11:58:21', 'ok'),
+(15, 2, 'POST - /clientes/darOpinion', 401, '2023-07-02 12:07:20', 'ok'),
+(16, 2, 'POST - /clientes/darOpinion', 200, '2023-07-02 12:07:40', 'ok'),
+(17, -1, 'POST - /login', 401, '2023-07-02 12:10:22', 'Contraseña incorrecta - Usuario ingresado: carlitox'),
+(18, 2, 'PUT - /usuarios', 401, '2023-07-02 12:10:57', 'ok'),
+(19, 10, 'POST - /login', 200, '2023-07-02 12:11:02', 'ok'),
+(20, 10, 'PUT - /usuarios', 200, '2023-07-02 12:11:04', 'ok'),
+(21, 1, 'POST - /login', 200, '2023-07-02 12:11:08', 'ok'),
+(22, 1, 'POST - /clientes/darOpinion', 200, '2023-07-02 12:11:11', 'ok'),
+(23, 1, 'GET - /calificaciones/mejores', 200, '2023-07-02 12:12:12', 'ok'),
+(24, 1, 'GET - /calificaciones/mejores', 200, '2023-07-02 12:12:26', 'ok'),
+(25, 1, 'GET - /calificaciones/mejores', 200, '2023-07-02 12:12:58', 'ok'),
+(26, 1, 'GET - /calificaciones/mejores', 200, '2023-07-02 12:13:23', 'ok'),
+(27, 1, 'GET - /calificaciones/mejores', 200, '2023-07-02 12:13:33', 'ok'),
+(28, 1, 'GET - /calificaciones/mejores', 401, '2023-07-02 12:28:39', 'ok'),
+(29, 1, 'GET - /calificaciones/mejores', 200, '2023-07-02 12:29:17', 'ok'),
+(30, 1, 'GET - /calificaciones/mejores', 200, '2023-07-02 12:31:25', 'ok'),
+(31, 1, 'GET - /calificaciones/mejores', 200, '2023-07-02 12:31:28', 'ok'),
+(32, 1, 'GET - /mesas/masUsada', 200, '2023-07-02 12:35:11', 'ok');
 
 -- --------------------------------------------------------
 
@@ -243,7 +216,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `clave`, `rol`, `fechaInicio`, `estado`, `fechaBaja`) VALUES
-(1, 'Carlos', 'carlitox', '$2y$10$GayMCMXKcedUkMEBgnqTL.6F4Ex8PR.jTKxQb9Rz4mrcDC/dSJNQC', 'socio', '2023-06-25 15:58:42', 'activo', NULL),
+(1, 'Carlos', 'carlitox', '$2y$10$7MnI4m1SuCxEtyvd91vEb.lQAHOvIYX5CTQ0esTvbT/y4a.7qzNcq', 'socio', '2023-06-25 15:58:42', 'activo', NULL),
 (2, 'Juan', 'juanchopo', '$2y$10$564AOvjpNjR3tUP3JLRinO8VKrSbe7v98j0vXPFW2fzBAUparh1PO', 'mozo', '2023-06-25 15:58:42', 'activo', NULL),
 (3, 'Camila', 'camila', '$2y$10$gNkxLdblmWzhH0124qAqOe0TcEDSfQiI56Ygwsv2tVkbHSoMiOqEG', 'bartender', '2023-06-25 15:58:42', 'activo', NULL),
 (4, 'Pedro', 'pedritox', '$2y$10$f6m2V.A9AME0Jw3vJeH8cev1NUBJUrBe8/kr58psnblahsx7jv9oq', 'cervecero', '2023-06-25 15:58:42', 'activo', NULL),
@@ -254,6 +227,12 @@ INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `clave`, `rol`, `fechaInicio`
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `calificaciones`
+--
+ALTER TABLE `calificaciones`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `log`
@@ -293,7 +272,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `log`
 --
 ALTER TABLE `log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT de la tabla `mesas`
